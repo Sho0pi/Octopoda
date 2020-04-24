@@ -72,6 +72,7 @@ func getUsername(userPath string) (string, string, error) {
 	return info[1], info[3], nil
 }
 
+
 func printUsername(username, password string) {
 	fmt.Printf("%s[%s*%s] %sAccount Found! %s\n", string(colorWhite), string(colorYellow), string(colorWhite), string(colorYellow), string(colorReset))
 	fmt.Printf("%s	⊢%s Username%s:%s %s\n", string(colorYellow), string(colorWhite), string(colorYellow), string(colorReset), username)

